@@ -1,0 +1,30 @@
+public class Name {
+    private final String lastName, firstName, middleName;//свойства
+
+    public Name(String firstName, String lastName, String middleName) {//конструктор для  имени фамилии и отчества
+        if ((firstName == null || firstName.isEmpty()) && (lastName == null || lastName.isEmpty()) && (middleName == null || middleName.isEmpty()))
+            throw new RuntimeException("Как минимум один параметр должен иметь не null значение и не пустую строку!");
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+    }
+    public Name(String firstName) {//конструктор для имени
+        if (firstName == null || firstName.isEmpty())
+            throw new RuntimeException("Как минимум один параметр должен иметь не null значение и не пустую строку!");
+        this.firstName = firstName;
+    }
+    public Name(String firstName, String lastName) {//конструктор для имени и фамилии
+        if ((firstName == null || firstName.isEmpty()) && (lastName == null || lastName.isEmpty()))
+            throw new RuntimeException("Как минимум один параметр должен иметь не null значение и не пустую строку!");
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String toString() {//метод toString
+        String result = "";
+        if (firstName != null) result += firstName;
+        if (middleName != null) result += " " + middleName;
+        if (lastName != null) result += " " + lastName;
+        return result;
+    }
+}
