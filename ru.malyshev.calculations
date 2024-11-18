@@ -1,0 +1,64 @@
+package ru.malyshev.calculations;
+
+interface sum {//интерфейс
+    double getValue();//геттер который есть в каждом классе
+}
+
+class IntegerValue implements sum {//целые числа
+    private int value;
+
+    public IntegerValue(int value) {//конструктор
+        this.value = value;
+    }
+
+    @Override // Аннотация для предотвращения ошибок в сигнатуре
+    public double getValue() { //геттер для целых чисел, выводит тип double
+        return value;
+    }
+}
+
+class DoubleValue implements sum {//double числа
+    private double value;
+
+    public DoubleValue(double value) {//конструктор
+        this.value = value;
+    }
+
+    @Override// Аннотация для предотвращения ошибок в сигнатуре
+    public double getValue() {//геттер для double чисел чисел, выводит тип double
+        return value;
+    }
+}
+
+class FractionValue implements sum {//дробные числа
+    private int numerator;
+    private int denominator;
+
+    public FractionValue(int numerator, int denominator) {//конструктор
+        if (denominator == 0) {
+            throw new RuntimeException("Знаменатель не может быть отрицательным!");
+        }
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    @Override// Аннотация для предотвращения ошибок в сигнатуре
+    public double getValue() {//геттер для дробных чисел чисел, выводит тип double
+        return (double) numerator / denominator;
+    }
+}
+
+public class totalsum {
+    private sum[] numbers; //массив для хранения чисел
+
+    public totalsum(sum[] numbers) {//конструктор
+        this.numbers = numbers;
+    }
+
+    public String toString() {//toString для вывода суммы
+        double sum = 0;
+         for (int i = 0; i < numbers.length; i++)
+             sum += numbers[i].getValue();
+        return " = " + sum;
+    }
+}
