@@ -1,0 +1,84 @@
+public class fraction6_1 extends Number { // сущность дробь
+    private final int numerator;
+    private final int denominator;//свойства
+
+    public fraction6_1(int numerator, int denominator) {//конструктор
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    public String toString() {//строковое представление вида “числитель/знаменатель”
+        return numerator + "/" + denominator;
+    }
+
+    public fraction6_1 sum(fraction6_1 otherfraction6_1) {//сложение дробей
+        return new fraction6_1(this.numerator * otherfraction6_1.denominator + this.denominator * otherfraction6_1.numerator, this.denominator * otherfraction6_1.denominator);
+    }
+
+    public fraction6_1 minus(fraction6_1 otherfraction6_1) {//вычитание
+        return new fraction6_1(this.numerator * otherfraction6_1.denominator - this.denominator * otherfraction6_1.numerator, this.denominator * otherfraction6_1.denominator);
+    }
+
+    public fraction6_1 multiply(fraction6_1 otherfraction6_1) {//умножение
+        return new fraction6_1(this.numerator * otherfraction6_1.numerator, this.denominator * otherfraction6_1.denominator);
+    }
+
+    public fraction6_1 divide(fraction6_1 otherfraction6_1) {//деление
+        if (otherfraction6_1.numerator == 0) throw new ArithmeticException("Числитель не может быть равен 0 у дроби на которую делят в функции деления.");
+        return new fraction6_1(this.numerator * otherfraction6_1.denominator, this.denominator * otherfraction6_1.numerator);
+    }
+
+    public fraction6_1 sum(int integer) {//сумма с целым числом
+        return new fraction6_1(this.numerator + integer * this.denominator, this.denominator);
+    }
+
+    public fraction6_1 minus(int integer) { //вычитание с целым числом
+        return new fraction6_1(this.numerator - integer * this.denominator, this.denominator);
+    }
+
+    public fraction6_1 multiply(int integer) {//умножениес целым числом
+        return new fraction6_1(this.numerator * integer, this.denominator);
+    }
+
+    public fraction6_1 divide(int integer) {//деление с целым числом
+        return new fraction6_1(this.numerator, this.denominator * integer);
+    }
+    
+    public boolean equals(Object o) {
+        if (this == o) return true;//проверка ссылок, если одинаковые то True
+        if (o == null || getClass() != o.getClass()) return false;//проверка на null и на соответствие классов.
+        fraction6_1 other = (fraction6_1) o;//создние локальной переменной other типа fraction6_1
+        return numerator == other.numerator && denominator == other.denominator;//если все значения равны, то объекты считаются равными.
+    }
+    
+    //абстрактные методы из Number
+    @Override
+    public int intValue() {
+        return (int) doubleValue();
+    }
+
+    @Override
+    public long longValue() {
+        return (long) doubleValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) numerator / denominator;
+    }
+
+    @Override
+    public byte byteValue() {
+        return (byte) doubleValue();
+    }
+
+    @Override
+    public short shortValue() {
+        return (short) doubleValue();
+    }
+}
