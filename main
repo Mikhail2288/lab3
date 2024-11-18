@@ -199,5 +199,12 @@ public class main {
         out.println(f1 + " == " + f2 + ":" + f1.equals(f2));
         out.println(f2 + " == " + f3 + ":" + f2.equals(f3));
         out.println(f1 + " == " + f3 + ":" + f1.equals(f3));
+
+        //8.3
+        out.println("8.3");
+        fraction8_3 f4 = new fraction8_3(1, 2);
+        fraction8_3 f5 = f4.clone();
+        out.println(f4 + ", " + f5 + " - одинаковые объкты в памяти: " + (f4 == f5));
+        out.println(f4 + ", " + f5 + " - одинаковые значения: " + f4.equals(f5));
     }
 }
