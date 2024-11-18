@@ -8,8 +8,7 @@ public class main {
         Scanner in = new Scanner(System.in);
         main m = new main();
         
-
-        //1.4
+       //1.4
         out.println("1.4");
         try{
           out.print("Введите числитель первой дроби: ");
@@ -17,20 +16,20 @@ public class main {
           out.print("Введите знаменатель первой дроби: ");
           int denominator1 = in.nextInt();
           if (denominator1 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f1 = new fraction(numerator1, denominator1);
+          fraction1_4 f1 = new fraction1_4(numerator1, denominator1);
           out.print("Введите числитель второй дроби: ");
           int numerator2 = in.nextInt();
           out.print("Введите знаменатель второй дроби: ");
           int denominator2 = in.nextInt();
           if (denominator2 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f2 = new fraction(numerator2, denominator2);
+          fraction1_4 f2 = new fraction1_4(numerator2, denominator2);
           out.print("Введите числитель третьтей дроби: ");
           int numerator3 = in.nextInt();
           out.print("Введите знаменатель третьтей дроби: ");
           int denominator3 = in.nextInt();
           if (denominator3 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f3 = new fraction(numerator3, denominator3);
-          fraction result = f1.sum(f2).divide(f3).minus(5);
+          fraction1_4 f3 = new fraction1_4(numerator3, denominator3);
+          fraction1_4 result = f1.sum(f2).divide(f3).minus(5);
           // Выводим результаты операций с дробями:
           out.println(f1 + " * " + f2 + " = " + f1.multiply(f2));
           out.println(f1 + " + " + f2 + " = " + f1.sum(f2));
@@ -56,16 +55,15 @@ public class main {
         catch (RuntimeException e) {
             out.println("Ошибка: " + e.getMessage());
         }
+        
         //1.7
         out.println("1.7");
         try{
-        Name cleopatra2 = new Name("");
         Name pushkin2 = new Name("Александр", "Пушкин", "Сергеевич");
         Name pushkin3 = new Name(null, null, "Сергеевич");
         Name mayakovsky2 = new Name("Владимир", "Маяковский");
         Name christodor2 = new Name("Христофор", "Бонифатьевич");
-        out.println(cleopatra2); // Клеопатра
-        out.println(pushkin2); // Пушкин Александр Сергеевич
+        out.println(pushkin2);
         out.println(mayakovsky2);
         out.println(christodor2);
         out.println(pushkin3);
@@ -73,6 +71,7 @@ public class main {
         catch (RuntimeException e) {
             out.println("Ошибка: " + e.getMessage());
         }
+        
         //3.1
         out.println("3.1");
         try{
@@ -81,20 +80,20 @@ public class main {
           out.print("Введите знаменатель первой дроби: ");
           int denominator1 = in.nextInt();
           if (denominator1 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f1 = new fraction(numerator1, denominator1);
+          fraction3_1 f1 = new fraction3_1(numerator1, denominator1);
           out.print("Введите числитель второй дроби: ");
           int numerator2 = in.nextInt();
           out.print("Введите знаменатель второй дроби: ");
           int denominator2 = in.nextInt();
           if (denominator2 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f2 = new fraction(numerator2, denominator2);
+          fraction3_1 f2 = new fraction3_1(numerator2, denominator2);
           out.print("Введите числитель третьтей дроби: ");
           int numerator3 = in.nextInt();
           out.print("Введите знаменатель третьтей дроби: ");
           int denominator3 = in.nextInt();
           if (denominator3 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          fraction f3 = new fraction(numerator3, denominator3);
-          fraction result = f1.sum(f2).divide(f3).minus(5);
+          fraction3_1 f3 = new fraction3_1(numerator3, denominator3);
+          fraction3_1 result = f1.sum(f2).divide(f3).minus(5);
           // Выводим результаты операций с дробями:
           out.println(f1 + " * " + f2 + " = " + f1.multiply(f2));
           out.println(f1 + " + " + f2 + " = " + f1.sum(f2));
@@ -120,6 +119,7 @@ public class main {
         catch (RuntimeException e) {
             out.println("Ошибка: " + e.getMessage());
         }
+        
         //4.2
         out.println("4.2");
         try{
@@ -128,29 +128,29 @@ public class main {
           out.print("Введите знаменатель первой дроби: ");
           int denominator1 = in.nextInt();
           if (denominator1 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          Number f1 = new fraction(numerator1, denominator1);
+          Number f1 = new fraction4_2(numerator1, denominator1);
           out.print("Введите числитель второй дроби: ");
           int numerator2 = in.nextInt();
           out.print("Введите знаменатель второй дроби: ");
           int denominator2 = in.nextInt();
           if (denominator2 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          Number f2 = new fraction(numerator2, denominator2);
+          Number f2 = new fraction4_2(numerator2, denominator2);
           out.print("Введите числитель третьтей дроби: ");
           int numerator3 = in.nextInt();
           out.print("Введите знаменатель третьтей дроби: ");
           int denominator3 = in.nextInt();
           if (denominator3 == 0) throw new IllegalArgumentException("Знаменатель не может быть равен 0! Неверный ввод.");
-          Number f3 = new fraction(numerator3, denominator3);
-          Number result = ((fraction) f1).sum((fraction) f2).divide((fraction) f3).minus(5);
+          Number f3 = new fraction4_2(numerator3, denominator3);
+          Number result = ((fraction4_2) f1).sum((fraction4_2) f2).divide((fraction4_2) f3).minus(5);
           // Выводим результаты операций с дробями:
-          out.println(f1 + " * " + f2 + " = " + ((fraction) f1).multiply((fraction) f2));
-          out.println(f1 + " + " + f2 + " = " + ((fraction) f1).sum((fraction) f2));
-          out.println(f1 + " - " + f2 + " = " + ((fraction) f1).divide((fraction) f2));
+          out.println(f1 + " * " + f2 + " = " + ((fraction4_2) f1).multiply((fraction4_2) f2));
+          out.println(f1 + " + " + f2 + " = " + ((fraction4_2) f1).sum((fraction4_2) f2));
+          out.println(f1 + " - " + f2 + " = " + ((fraction4_2) f1).divide((fraction4_2) f2));
           // Выводим результаты операций с целыми числами:
-          out.println(f1 + " + " + 5 + " = " + ((fraction) f1).sum(5));
-          out.println(f1 + " - " + 5 + " = " + ((fraction) f1).minus(5));
-          out.println(f1 + " * " + 5 + " = " + ((fraction) f1).multiply(5));
-          out.println(f1 + " / " + 5 + " = " + ((fraction) f1).divide(5));
+          out.println(f1 + " + " + 5 + " = " + ((fraction4_2) f1).sum(5));
+          out.println(f1 + " - " + 5 + " = " + ((fraction4_2) f1).minus(5));
+          out.println(f1 + " * " + 5 + " = " + ((fraction4_2) f1).multiply(5));
+          out.println(f1 + " / " + 5 + " = " + ((fraction4_2) f1).divide(5));
           // Выводим результат примера
           out.println(f1 + " + " + f2 + " / " + f3 + " - " + 5 + " = " + result);
           // Примеры с первой дробью с абстрактными методами из Number
@@ -173,7 +173,8 @@ public class main {
         catch (RuntimeException e) {
             out.println("Ошибка: " + e.getMessage());
         }
-         //5.1
+        
+        //5.1
         out.println("5.1");
         sum[] numbers1 = {new IntegerValue(2), new FractionValue(3, 5), new DoubleValue(2.3)};//массив numbers из экземпляров sum
         totalsum calculator1 = new totalsum(numbers1);
@@ -188,11 +189,12 @@ public class main {
         sum[] numbers3 = {new FractionValue(1, 3), new IntegerValue(1)};
         totalsum calculator3 = new totalsum(numbers3);
         out.println("1/3 + 1" + calculator3);// Пример 3: 1/3 + 1
+        
         //6.1
         out.println("6.1");
-        fraction f1 = new fraction(1, 3);
-        fraction f2 = new fraction(1, 2);
-        fraction f3 = new fraction(1, 3); 
+        fraction6_1 f1 = new fraction6_1(1, 3);
+        fraction6_1 f2 = new fraction6_1(1, 2);
+        fraction6_1 f3 = new fraction6_1(1, 3); 
 
         out.println(f1 + " == " + f2 + ":" + f1.equals(f2));
         out.println(f2 + " == " + f3 + ":" + f2.equals(f3));
