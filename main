@@ -10,7 +10,7 @@ public class main {
         
 
         //1.4
-        out.println("5.5");
+        out.println("1.4");
         try{
           out.print("Введите числитель первой дроби: ");
           int numerator1 = in.nextInt();
