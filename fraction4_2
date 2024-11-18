@@ -1,0 +1,78 @@
+public class fraction4_2 extends Number { // сущность дробь
+    private final int numerator;
+    private final int denominator;//свойства
+
+    public fraction4_2(int numerator, int denominator) {//конструктор
+        if (denominator < 0) throw new RuntimeException("Знаменатель не может быть отрицательным!");
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    public String toString() {//строковое представление вида “числитель/знаменатель”
+        return numerator + "/" + denominator;
+    }
+
+    public fraction4_2 sum(fraction4_2 otherfraction4_2) {//сложение дробей
+        return new fraction4_2(this.numerator * otherfraction4_2.denominator + this.denominator * otherfraction4_2.numerator, this.denominator * otherfraction4_2.denominator);
+    }
+
+    public fraction4_2 minus(fraction4_2 otherfraction4_2) {//вычитание
+        return new fraction4_2(this.numerator * otherfraction4_2.denominator - this.denominator * otherfraction4_2.numerator, this.denominator * otherfraction4_2.denominator);
+    }
+
+    public fraction4_2 multiply(fraction4_2 otherfraction4_2) {//умножение
+        return new fraction4_2(this.numerator * otherfraction4_2.numerator, this.denominator * otherfraction4_2.denominator);
+    }
+
+    public fraction4_2 divide(fraction4_2 otherfraction4_2) {//деление
+        if (otherfraction4_2.numerator == 0) throw new ArithmeticException("Числитель не может быть равен 0 у дроби на которую делят в функции деления.");
+        return new fraction4_2(this.numerator * otherfraction4_2.denominator, this.denominator * otherfraction4_2.numerator);
+    }
+
+    public fraction4_2 sum(int integer) {//сумма с целым числом
+        return new fraction4_2(this.numerator + integer * this.denominator, this.denominator);
+    }
+
+    public fraction4_2 minus(int integer) { //вычитание с целым числом
+        return new fraction4_2(this.numerator - integer * this.denominator, this.denominator);
+    }
+
+    public fraction4_2 multiply(int integer) {//умножениес целым числом
+        return new fraction4_2(this.numerator * integer, this.denominator);
+    }
+
+    public fraction4_2 divide(int integer) {//деление с целым числом
+        return new fraction4_2(this.numerator, this.denominator * integer);
+    }
+    
+    //абстрактные методы из Number
+    @Override
+    public int intValue() {
+        return (int) doubleValue();
+    }
+
+    @Override
+    public long longValue() {
+        return (long) doubleValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) numerator / denominator;
+    }
+
+    @Override
+    public byte byteValue() {
+        return (byte) doubleValue();
+    }
+
+    @Override
+    public short shortValue() {
+        return (short) doubleValue();
+    }
+}
