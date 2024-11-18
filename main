@@ -173,5 +173,20 @@ public class main {
         catch (RuntimeException e) {
             out.println("Ошибка: " + e.getMessage());
         }
+         //5.1
+        out.println("5.1");
+        sum[] numbers1 = {new IntegerValue(2), new FractionValue(3, 5), new DoubleValue(2.3)};//массив numbers из экземпляров sum
+        totalsum calculator1 = new totalsum(numbers1);
+        out.println("2 + 3/5 + 2.3" + calculator1);// Пример 1: 2 + 3/5 + 2.3
+
+        
+        sum[] numbers2 = {new DoubleValue(3.6), new FractionValue(49, 12), new IntegerValue(3), new FractionValue(3, 2)};
+        totalsum calculator2 = new totalsum(numbers2);
+        out.println("3.6 + 49/12 + 3 + 3/2" + calculator2);// Пример 2: 3.6 + 49/12 + 3 + 3/2
+
+        
+        sum[] numbers3 = {new FractionValue(1, 3), new IntegerValue(1)};
+        totalsum calculator3 = new totalsum(numbers3);
+        out.println("1/3 + 1" + calculator3);// Пример 3: 1/3 + 1
     }
 }
