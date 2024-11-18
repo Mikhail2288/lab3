@@ -1,0 +1,14 @@
+public class totalsum {
+    private sum[] numbers; //массив для хранения чисел
+
+    public totalsum(sum[] numbers) {//конструктор
+        this.numbers = numbers;
+    }
+
+    public String toString() {//toString для вывода суммы
+        double sum = 0;
+         for (int i = 0; i < numbers.length; i++)
+             sum += numbers[i].getValue();
+        return " = " + sum;
+    }
+}
