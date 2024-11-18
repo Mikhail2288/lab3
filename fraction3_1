@@ -1,0 +1,47 @@
+public final class fraction3_1 { // сущность дробь
+    private final int numerator;
+    private final int denominator;//свойства
+
+    public fraction3_1(int numerator, int denominator) {//конструктор
+        if (denominator < 0) throw new RuntimeException("Знаменатель не может быть отрицательным!");
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    public String toString() {//строковое представление вида “числитель/знаменатель”
+        return numerator + "/" + denominator;
+    }
+
+    public fraction3_1 sum(fraction3_1 otherfraction3_1) {//сложение дробей
+        return new fraction3_1(this.numerator * otherfraction3_1.denominator + this.denominator * otherfraction3_1.numerator, this.denominator * otherfraction3_1.denominator);
+    }
+
+    public fraction3_1 minus(fraction3_1 otherfraction3_1) {//вычитание
+        return new fraction3_1(this.numerator * otherfraction3_1.denominator - this.denominator * otherfraction3_1.numerator, this.denominator * otherfraction3_1.denominator);
+    }
+
+    public fraction3_1 multiply(fraction3_1 otherfraction3_1) {//умножение
+        return new fraction3_1(this.numerator * otherfraction3_1.numerator, this.denominator * otherfraction3_1.denominator);
+    }
+
+    public fraction3_1 divide(fraction3_1 otherfraction3_1) {//деление
+        if (otherfraction3_1.numerator == 0) throw new ArithmeticException("Числитель не может быть равен 0 у дроби на которую делят в функции деления.");
+        return new fraction3_1(this.numerator * otherfraction3_1.denominator, this.denominator * otherfraction3_1.numerator);
+    }
+
+    public fraction3_1 sum(int integer) {//сумма с целым числом
+        return new fraction3_1(this.numerator + integer * this.denominator, this.denominator);
+    }
+
+    public fraction3_1 minus(int integer) { //вычитание с целым числом
+        return new fraction3_1(this.numerator - integer * this.denominator, this.denominator);
+    }
+
+    public fraction3_1 multiply(int integer) {//умножениес целым числом
+        return new fraction3_1(this.numerator * integer, this.denominator);
+    }
+
+    public fraction3_1 divide(int integer) {//деление с целым числом
+        return new fraction3_1(this.numerator, this.denominator * integer);
+    }
+}
