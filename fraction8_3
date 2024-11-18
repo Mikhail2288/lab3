@@ -1,0 +1,94 @@
+public class fraction8_3 extends Number implements Cloneable { // сущность дробь
+    private final int numerator;
+    private final int denominator;//свойства
+
+    public fraction8_3(int numerator, int denominator) {//конструктор
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+
+    public String toString() {//строковое представление вида “числитель/знаменатель”
+        return numerator + "/" + denominator;
+    }
+
+    public fraction8_3 sum(fraction8_3 otherfraction8_3) {//сложение дробей
+        return new fraction8_3(this.numerator * otherfraction8_3.denominator + this.denominator * otherfraction8_3.numerator, this.denominator * otherfraction8_3.denominator);
+    }
+
+    public fraction8_3 minus(fraction8_3 otherfraction8_3) {//вычитание
+        return new fraction8_3(this.numerator * otherfraction8_3.denominator - this.denominator * otherfraction8_3.numerator, this.denominator * otherfraction8_3.denominator);
+    }
+
+    public fraction8_3 multiply(fraction8_3 otherfraction8_3) {//умножение
+        return new fraction8_3(this.numerator * otherfraction8_3.numerator, this.denominator * otherfraction8_3.denominator);
+    }
+
+    public fraction8_3 divide(fraction8_3 otherfraction8_3) {//деление
+        if (otherfraction8_3.numerator == 0) throw new ArithmeticException("Числитель не может быть равен 0 у дроби на которую делят в функции деления.");
+        return new fraction8_3(this.numerator * otherfraction8_3.denominator, this.denominator * otherfraction8_3.numerator);
+    }
+
+    public fraction8_3 sum(int integer) {//сумма с целым числом
+        return new fraction8_3(this.numerator + integer * this.denominator, this.denominator);
+    }
+
+    public fraction8_3 minus(int integer) { //вычитание с целым числом
+        return new fraction8_3(this.numerator - integer * this.denominator, this.denominator);
+    }
+
+    public fraction8_3 multiply(int integer) {//умножениес целым числом
+        return new fraction8_3(this.numerator * integer, this.denominator);
+    }
+
+    public fraction8_3 divide(int integer) {//деление с целым числом
+        return new fraction8_3(this.numerator, this.denominator * integer);
+    }
+    
+    @Override
+    public fraction8_3 clone() {
+        try {
+            return (fraction8_3) super.clone(); // Создаём поверхностную копию
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e); 
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        fraction8_3 that = (fraction8_3) o;
+        return numerator == that.numerator && denominator == that.denominator;
+    }
+    
+    //абстрактные методы из Number
+    @Override
+    public int intValue() {
+        return (int) doubleValue();
+    }
+
+    @Override
+    public long longValue() {
+        return (long) doubleValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) numerator / denominator;
+    }
+
+    @Override
+    public byte byteValue() {
+        return (byte) doubleValue();
+    }
+
+    @Override
+    public short shortValue() {
+        return (short) doubleValue();
+    }
+}
