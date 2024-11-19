@@ -12,12 +12,15 @@ public class Name {
         if (firstName == null || firstName.isEmpty())
             throw new RuntimeException("Как минимум один параметр должен иметь не null значение и не пустую строку!");
         this.firstName = firstName;
+        this.lastName = "";
+        this.middleName = "";
     }
     public Name(String firstName, String lastName) {//конструктор для имени и фамилии
         if ((firstName == null || firstName.isEmpty()) && (lastName == null || lastName.isEmpty()))
             throw new RuntimeException("Как минимум один параметр должен иметь не null значение и не пустую строку!");
         this.firstName = firstName;
         this.lastName = lastName;
+        this.middleName = "";
     }
 
     public String toString() {//метод toString
